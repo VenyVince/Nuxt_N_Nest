@@ -24,13 +24,17 @@
   - 백엔드 작업용 Git 브랜치 생성
     - 로컬 브랜치: `be`
     - `be`로 upstream 설정 완료
+  - `be/src`에서 백엔드 코드 작성 시작
+  - Redis 연결 설정
+  - Multer 패키지 다운완료
+  - `POST /upload` API 만들기
+    - service코드 리뷰
 
 
   ## 오늘 남은 할 일
 
-  - `be/src`에서 백엔드 코드 작성 시작
-  - Redis 연결 설정
-  - `POST /upload` API 만들기
+   - `POST /upload` API 만들기
+    - controller코드 리뷰
   - 업로드된 파일을 BullMQ job으로 등록하기
   - Worker 만들어서 job 처리하기
   - 처리 결과를 임시 저장하기
@@ -104,3 +108,5 @@
   - Do not write full code unless I explicitly request it.
   - Help me understand what to do, why to do it, and where to look.
   - Prefer official NestJS, Nuxt, and BullMQ documentation when explaining.
+  - Please call me '석현님'.
+  - If I ask questions in a numbered order (like 1. something, 2. something, 3. something), please provide answers corresponding to each question along with them.

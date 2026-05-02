@@ -2,7 +2,7 @@ import { InjectQueue } from '@nestjs/bullmq';
 import { Injectable } from '@nestjs/common';
 import { Job, Queue } from 'bullmq';
 import 'multer';
-import { FileProcess, FileResultData } from 'src/types/file.type';
+import { FileProcess, FileResultData } from '../types/file.type';
 
 // Real Work.
 @Injectable()

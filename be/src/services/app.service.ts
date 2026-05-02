@@ -1,7 +1,8 @@
 import { InjectQueue } from '@nestjs/bullmq';
 import { Injectable } from '@nestjs/common';
-import { Queue } from 'bullmq';
+import { Job, Queue } from 'bullmq';
 import 'multer';
+import { FileProcess, FileResultData } from 'src/types/file.type';
 
 // Real Work.
 @Injectable()
@@ -26,5 +27,19 @@ export class AppService {
     return {
       jobId: job.id,
     };
+  }
+  async getResult(jobId: string) {
+    const job = await Job.fromId<FileResultData, FileProcess>(
+      this.fileQueue,
+      jobId,
+    );
+    if (!job) {
+      return { jobId, state: 'not_found', result: null };
+    }
+    const state = await job.getState();
+    if (state !== 'completed') {
+      return { jobId, state, result: null };
+    }
+    return { jobId, state, result: job.returnvalue };
   }
 }

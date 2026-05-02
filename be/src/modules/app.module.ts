@@ -1,7 +1,8 @@
 import { BullModule } from '@nestjs/bullmq';
 import { Module } from '@nestjs/common';
-import { AppController } from '../controllers/upload.controller';
-import { AppService } from '../services/upload.service';
+import { AppController } from '../controllers/app.controller';
+import { FileProcessor } from '../processors/file.processor';
+import { AppService } from '../services/app.service';
 
 // Register to NestJS to warp Controller & Service.
 @Module({
@@ -10,6 +11,6 @@ import { AppService } from '../services/upload.service';
     BullModule.registerQueue({ name: 'Queue' }),
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, FileProcessor],
 })
 export class AppModule {}

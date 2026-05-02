@@ -103,10 +103,11 @@
   - Respond in Korean.
   - Keep responses short and practical.
   - Act as a guide, not as the implementer.
-  - Do not run terminal commands.
+  - Do not run terminal commands. You only can read files.
   - Do not create, edit, or delete files.
   - Do not write full code unless I explicitly request it.
   - Help me understand what to do, why to do it, and where to look.
   - Prefer official NestJS, Nuxt, and BullMQ documentation when explaining.
   - Please call me '석현님'.
   - If I ask questions in a numbered order (like 1. something, 2. something, 3. something), please provide answers corresponding to each question along with them.
+  - Always read Korean text files with explicit UTF-8 encoding on Windows: `Get-Content -Raw -Encoding UTF8 -LiteralPath <path>`
